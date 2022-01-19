@@ -1,8 +1,8 @@
-(ns ruse.pensieve
+(ns pensieve.pensieve
   (:require
    [clj-http.client :as client]
    [clojure.repl :refer :all]
-   [ruse.util :as u])
+   [pensieve.util :as u])
   (:gen-class))
 
 (defn api-get-pensieve-breeds []

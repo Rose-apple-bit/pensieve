@@ -1,4 +1,4 @@
-(ns ruse.rc
+(ns pensieve.rc
   (:require
    [clojure.repl :refer :all])
   (:gen-class)
@@ -10,8 +10,8 @@
 
 (defn get-rc-file-raw []
   (let [defaults (read-string (slurp "conf/default-rc.edn"))
-        home-rc (format "%s/.ruserc" (System/getProperty "user.home"))
-        xdg-rc (format "%s/ruse/ruserc" (get-xdg-config-home))]
+        home-rc (format "%s/.pensieverc" (System/getProperty "user.home"))
+        xdg-rc (format "%s/pensieve/pensieverc" (get-xdg-config-home))]
     (conj
       defaults
       (if (.exists (clojure.java.io/file home-rc))

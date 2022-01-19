@@ -1,8 +1,8 @@
-(ns ruse.fuse-pensieve
+(ns pensieve.fuse-pensieve
   (:require
    [clojure.repl :refer :all]
-   [ruse.pensieve :as dog]
-   [ruse.util :as u])
+   [pensieve.pensieve :as dog]
+   [pensieve.util :as u])
   (:import
    (java.nio ByteBuffer)
    (ru.serce.jnrfuse ErrorCodes FuseStubFS)

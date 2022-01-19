@@ -9,7 +9,7 @@
                  [cheshire "5.8.1"]
                  [org.clojure/tools.reader "1.3.2"]
                  [com.github.serceman/jnr-fuse "0.5.2.1"]]
+  :repositories {"bintray" "https://jcenter.bintray.com"}
   :main ^:skip-aot pensieve.core
   :target-path "target/%s"
-  :profiles {:uberjar {:aot :all
-                       :jvm-opts ["-Dclojure.compiler.direct-linking=true"]}})
+  :profiles {:uberjar {:aot :all}})

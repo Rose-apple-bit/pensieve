@@ -1,4 +1,4 @@
-(ns ruse.util
+(ns pensieve.util
   (:require
    [clojure.repl :refer :all])
   (:import
