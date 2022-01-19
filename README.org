@@ -26,7 +26,7 @@ Run =Pen.el= in the background. It's the prompting server that powers =PenSieve=
 
 Download Pen.el from http://github.com/semiosis/pen.el.
 
-Read about it here: https://semiosis.github.io/pensieve/.
+Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
 
 ** Usage
 *** Initiate the file system like so
