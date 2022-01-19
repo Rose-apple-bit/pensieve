@@ -2,6 +2,11 @@
 ** Simple mapping to Pen.el
 I want _emergent behaviour_.
 
+Therefore, base the prompts entirely on file names for the moment.
+
+In the future, edit filesystem attributes,
+etc.
+
 ** Prompting
 *** Initiate the filesystem like so
 **** A chatbot's memories
