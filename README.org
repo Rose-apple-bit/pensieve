@@ -1,6 +1,9 @@
 * PenSieve - A filesystem abstraction for prompting Large Language Models
 
-The idea with =PenSieve= is that you drag and drop files representing thoughts.
+The idea with =PenSieve= is that you drag and
+drop files representing thoughts, or similarly
+high-dimensional concepts, which are used to
+prompt an imaginary filesystem.
 
 What goes in also affects what comes out, and may be used to train the model.
 
