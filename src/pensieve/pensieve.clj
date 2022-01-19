@@ -13,7 +13,7 @@
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
 ;; Pull some remote values
-(defn api-get-pensieve-pics [filename]
+(defn api-get-pensieve-filenames [filename]
   (-> (client/get
        ;; "https://dog.ceo/api/breeds/list/all"
        (str "https://dog.ceo/api/breed/" filename "/images")
@@ -21,25 +21,25 @@
       :body :message))
 ;; This gets the body and then gets the message from the body
 
-(def mapi-get-pensieve-pics (memoize api-get-pensieve-pics))
+(def mapi-get-pensieve-pics (memoize api-get-pensieve-filenames))
 
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
 ;; So this is syntax sugar, for then extracting the value associated with the key.
-(defn api-get-pensieve-pic [filename s]
+(defn api-get-pensieve-filename [filename s]
   (-> (client/get
        (str "https://images.dog.ceo/breeds/" filename "/" s)
        ;; {:as :stream}
        {:as :byte-array})
       :body))
 ;; So it might as well be written like this:
-;; (defn api-get-pensieve-pic [filename s]
+;; (defn api-get-pensieve-filename [filename s]
 ;;   (:body (client/get
 ;;           (str "https://images.dog.ceo/breeds/" filename "/" s)
 ;;           ;; {:as :stream}
 ;;           {:as :byte-array})))
 
-(def mapi-get-pensieve-pic (memoize api-get-pensieve-pic))
+(def mapi-get-pensieve-pic (memoize api-get-pensieve-filename))
 
 (defn get-pensieve-filenames [filename]
   (mapi-get-pensieve-pics filename))
