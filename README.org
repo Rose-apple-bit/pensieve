@@ -35,16 +35,16 @@ Or:
 #+END_EXAMPLE
 
 ** License
-Copyright © 2022 FIXME
+Copyright © 2022 Semiotic LLC
 
-This program and the accompanying materials are made available under the
-terms of the Eclipse Public License 2.0 which is available at
-http://www.eclipse.org/legal/epl-2.0.
+#+BEGIN_SRC text -n :async :results verbatim code
+                     GNU GENERAL PUBLIC LICENSE
+                        Version 3, 29 June 2007
+  
+  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
+  Everyone is permitted to copy and distribute verbatim copies
+  of this license document, but changing it is not allowed.
+  ...
+#+END_SRC
 
-This Source Code may also be made available under the following
-Secondary Licenses when the conditions for such availability set forth
-in the Eclipse Public License, v. 2.0 are satisfied: GNU General Public
-License as published by the Free Software Foundation, either version 2
-of the License, or (at your option) any later version, with the GNU
-Classpath Exception which is available at
-https://www.gnu.org/software/classpath/license.html.
+[[./LICENSE]]
