@@ -6,7 +6,7 @@
   (:gen-class))
 
 (defn api-get-pensieve-filenames []
-  (-> (client/get "https://pensieve.ceo/api/filenames/list/all"
+  (-> (client/get "https://dog.ceo/api/breeds/list/all"
                   {:as :json})
       :body :message))
 
@@ -15,8 +15,8 @@
 ;; Pull some remote values
 (defn api-get-pensieve-pics [filename]
   (-> (client/get
-       ;; "https://pensieve.ceo/api/filenames/list/all"
-       (str "https://pensieve.ceo/api/filename/" filename "/images")
+       ;; "https://dog.ceo/api/breeds/list/all"
+       (str "https://dog.ceo/api/filename/" filename "/images")
        {:as :json})
       :body :message))
 ;; This gets the body and then gets the message from the body
@@ -28,14 +28,14 @@
 ;; So this is syntax sugar, for then extracting the value associated with the key.
 (defn api-get-pensieve-pic [filename s]
   (-> (client/get
-       (str "https://images.pensieve.ceo/filenames/" filename "/" s)
+       (str "https://images.dog.ceo/breeds/" filename "/" s)
        ;; {:as :stream}
        {:as :byte-array})
       :body))
 ;; So it might as well be written like this:
 ;; (defn api-get-pensieve-pic [filename s]
 ;;   (:body (client/get
-;;           (str "https://images.pensieve.ceo/filenames/" filename "/" s)
+;;           (str "https://images.dog.ceo/breeds/" filename "/" s)
 ;;           ;; {:as :stream}
 ;;           {:as :byte-array})))
 
