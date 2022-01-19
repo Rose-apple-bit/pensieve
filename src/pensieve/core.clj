@@ -1,4 +1,7 @@
 (ns pensieve.core
+  (:require
+   [clojure.repl :refer :all]
+   [pensieve.fuse-dog :as pensieve])
   (:gen-class))
 
 (defn -main
@@ -6,5 +9,5 @@
   [& args]
   (let [[type dir] args]
     (cond
-      (= "pensieve" type) (pensieve/main dir)
+      (= "pensieve" type) (fpensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve]"))))
