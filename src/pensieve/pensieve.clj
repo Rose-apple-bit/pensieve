@@ -21,7 +21,7 @@
       :body :message))
 ;; This gets the body and then gets the message from the body
 
-(def mapi-get-pensieve-pics (memoize api-get-pensieve-filenames))
+(def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
 
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
@@ -42,7 +42,7 @@
 (def mapi-get-pensieve-pic (memoize api-get-pensieve-filename))
 
 (defn get-pensieve-filenames [filename]
-  (mapi-get-pensieve-pics filename))
+  (mapi-get-pensieve-filenames filename))
 
 (defn get-pensieve-pic
   "Ensure that P has the leading slash.
