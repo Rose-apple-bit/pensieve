@@ -5,12 +5,12 @@
    [pensieve.util :as u])
   (:gen-class))
 
-(defn api-get-pensieve-filenames []
+(defn api-get-pensieve-directories []
   (-> (client/get "https://dog.ceo/api/breeds/list/all"
                   {:as :json})
       :body :message))
 
-(def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
+(def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
 ;; Pull some remote values
 (defn api-get-pensieve-pics [filename]
@@ -52,7 +52,7 @@
     (mapi-get-pensieve-pic filename s)))
 
 (defn get-pensieve-filenames []
-  (->> (mapi-get-pensieve-filenames)
+  (->> (mapi-get-pensieve-directories)
        keys
        (map #(subs (str %) 1))
        (into [])))
