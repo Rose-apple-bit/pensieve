@@ -69,31 +69,31 @@
 (defn filename-exists? [path]
   (u/member (subs path 1) (get-files)))
 
-(defn get-few-pensieve-pics [filename]
+(defn get-few-pensieve-filenames [filename]
   (into [] (take 10 (get-pensieve-pics filename))))
 
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
 
-(defn get-pics-clean [filename]
+(defn get-file-list-clean [filename]
   (doall
-   (into [] (map get-filename-only (get-few-pensieve-pics filename)))))
+   (into [] (map get-filename-only (get-few-pensieve-filenames filename)))))
 
-(def listing-cache (atom {}))
+(def file-listing-cache (atom {}))
 
-(defn set-listing-cache! [filename]
-  (swap! listing-cache conj {(keyword filename) (get-pics-clean filename)}))
+(defn set-file-listing-cache! [filename]
+  (swap! file-listing-cache conj {(keyword filename) (get-file-list-clean filename)}))
 
 (defn get-pensieve-list! [filename]
   (let [kw (keyword filename)]
-    (if (kw @listing-cache)
-      (kw @listing-cache)
-      (kw (set-listing-cache! filename)))))
+    (if (kw @file-listing-cache)
+      (kw @file-listing-cache)
+      (kw (set-file-listing-cache! filename)))))
 
 (defn file-exists?
   "Check against the path string, S always has a leading slash.
   Sample: /whippet/n02091134_10918.jpg"
   [p]
   (let [[_ filename s] (u/split-by-slash p)]
-    (let [files ((keyword filename) @listing-cache)]
+    (let [files ((keyword filename) @file-listing-cache)]
       (u/member s files))))
