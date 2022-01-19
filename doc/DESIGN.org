@@ -1,0 +1,16 @@
+* Prompting
+** Initiate the filesystem like so
+*** A chatbot's memories
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  pensieve "Dumbledore's Memories"
+#+END_SRC
+
+*** The memories of people
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  pensieve "people's memories"
+#+END_SRC
+
+** The prompt
+#+BEGIN_SRC text -n :async :results verbatim code
+  This is the filesystem for exploring <what>:
+#+END_SRC
