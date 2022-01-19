@@ -1,7 +1,7 @@
 (ns pensieve.fuse-pensieve
   (:require
    [clojure.repl :refer :all]
-   [pensieve.pensieve :as dog]
+   [pensieve.pensieve :as pensieve]
    [pensieve.util :as u])
   (:import
    (java.nio ByteBuffer)
@@ -40,12 +40,12 @@
   (cond
     (= "/" path) (readdir-list-files-base m (pensieve/get-breeds) [])
     ;; Pop off leading slash and show the list of breeds.
-    :else (readdir-list-files-base m [] (pensieve/get-dog-list! (subs path 1)))
+    :else (readdir-list-files-base m [] (pensieve/get-pensieve-list! (subs path 1)))
     ))
 
 (defn read-fuse-file [{:keys [path buf size offset fi]}]
   (let [
-        bytes (pensieve/get-dog-pic path)
+        bytes (pensieve/get-pensieve-pic path)
         length (count bytes)
         bytes-to-read (min (- length offset) size)
         contents (ByteBuffer/wrap bytes)
@@ -69,7 +69,7 @@
       [path stat]                       ; string , jni
       (cond
         (u/member path stub-dirs) (getattr-directory (u/lexical-ctx-map))
-        (pensieve/dog-exists? path) (getattr-file (u/lexical-ctx-map))
+        (pensieve/pensieve-exists? path) (getattr-file (u/lexical-ctx-map))
         :else (enoent-error)))
     (readdir
       [path buf filt offset fi]
@@ -82,7 +82,7 @@
       [path fi]
       ;; Here we handle errors on opening
       (prn "In open: " path fi)
-      (if (and (u/member path stub-dirs) (not (pensieve/dog-exists? path)))
+      (if (and (u/member path stub-dirs) (not (pensieve/pensieve-exists? path)))
         (enoent-error)
         0))
     (read
@@ -90,7 +90,7 @@
       ;; Here we read the contents
       (prn "In read" path)
       (if
-          (not (pensieve/dog-exists? path))
+          (not (pensieve/pensieve-exists? path))
           (enoent-error)
           (read-fuse-file (u/lexical-ctx-map))))))
 
