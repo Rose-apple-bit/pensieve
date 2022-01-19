@@ -1,8 +1,8 @@
-* PenSieve - A filesystem interface to large language models
+* PenSieve - A filesystem interface to Large Language Models
 
 https://semiosis.github.io/pensieve/
 
-The idea with PenSieve is that you drag and drop files representing thoughts.
+The idea with =PenSieve= is that you drag and drop files representing thoughts.
 
 What goes in also affects what comes out, and may be used to train the model.
 
