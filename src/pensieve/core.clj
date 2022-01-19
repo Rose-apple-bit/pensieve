@@ -9,7 +9,6 @@
 (defn cmd
   ""
   [& args]
-  ;; map a vector with a shell command
   (clojure.string/join
    " "
    (map (fn [s] (->
