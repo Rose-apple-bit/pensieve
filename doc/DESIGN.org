@@ -1,3 +1,7 @@
+* Design
+** Simple mapping to Pen.el
+Look for _emergent behaviour_.
+
 * Prompting
 ** Initiate the filesystem like so
 *** A chatbot's memories
