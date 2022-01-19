@@ -58,7 +58,7 @@
        (into [])))
 
 (def filenames-atom (atom nil))
- 
+
 (defn set-filenames-atom! []
   (reset! filenames-atom (get-pensieve-filenames)))
 
