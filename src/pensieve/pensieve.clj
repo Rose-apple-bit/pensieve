@@ -95,5 +95,5 @@
   Sample: /whippet/n02091134_10918.jpg"
   [p]
   (let [[_ filename s] (u/split-by-slash p)]
-    (let [pensieves ((keyword filename) @http-cache)]
-      (u/member s pensieves))))
+    (let [files ((keyword filename) @http-cache)]
+      (u/member s files))))
