@@ -2,7 +2,7 @@
 
 PenSieve is a filesystem abstraction for an
 imaginary file system based on prompting a
-large languae mode, using =Pen.el= as the
+Large Language Models, using =Pen.el= as the
 prompting server.
 
 In layman's terms, you drag and drop files
