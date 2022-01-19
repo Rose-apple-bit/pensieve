@@ -12,7 +12,8 @@ to guide the prompting.
 What goes in also affects what comes out, and
 may be used to train the model.
 
-A filesystem abstraction for prompting, using =Pen.el= as the prompting server.
+A filesystem abstraction for prompting, using
+=Pen.el= as the prompting server.
 
 ** Installation
 Download from http://github.com/semiosis/pensieve.
