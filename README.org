@@ -2,7 +2,7 @@
 
 PenSieve is essentially an imaginary file
 system based on prompting Large LMs, using
-=Pen.el= as the prompting server.
+=Pen.el= as the prompting server, or more accurately, a file system interface to prompting.
 
 In layman's terms, you drag and drop files
 representing thoughts, or similarly high-
