@@ -19,6 +19,8 @@ history, which is used to guide the prompting.
 What goes in also affects what comes out, and
 may be used to train the model.
 
++ Asking Dumbledore for help with the design :: https://asciinema.org/a/Wl8ti5oE7YK9bdwb3gzsxzB4w
+
 ** Installation
 Download from http://github.com/semiosis/pensieve.
 
