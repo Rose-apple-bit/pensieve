@@ -39,7 +39,7 @@
 (defn readdir-list-files [{:keys [path buf filt offset fi] :as m}]
   (cond
     (= "/" path) (readdir-list-files-base m (pensieve/get-files) [])
-    ;; Pop off leading slash and show the list of breeds.
+    ;; Pop off leading slash and show the list of filenames.
     :else (readdir-list-files-base m [] (pensieve/get-pensieve-list! (subs path 1)))
     ))
 
