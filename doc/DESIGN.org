@@ -10,7 +10,7 @@
   pensieve "People's memories"
 #+END_SRC
 
-** Each directory has a memory
+** Each directory has a prompt memory
 
 ** The prompt
 #+BEGIN_SRC text -n :async :results verbatim code
