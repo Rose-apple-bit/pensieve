@@ -26,30 +26,30 @@
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
 ;; So this is syntax sugar, for then extracting the value associated with the key.
-(defn api-get-pensieve-filename [filename s]
+(defn api-get-pensieve-file [filename s]
   (-> (client/get
        (str "https://images.dog.ceo/breeds/" filename "/" s)
        ;; {:as :stream}
        {:as :byte-array})
       :body))
 ;; So it might as well be written like this:
-;; (defn api-get-pensieve-filename [filename s]
+;; (defn api-get-pensieve-file [filename s]
 ;;   (:body (client/get
 ;;           (str "https://images.dog.ceo/breeds/" filename "/" s)
 ;;           ;; {:as :stream}
 ;;           {:as :byte-array})))
 
-(def mapi-get-pensieve-pic (memoize api-get-pensieve-filename))
+(def mapi-get-pensieve-file (memoize api-get-pensieve-file))
 
 (defn get-pensieve-filenames [filename]
   (mapi-get-pensieve-filenames filename))
 
-(defn get-pensieve-pic
+(defn get-pensieve-file
   "Ensure that P has the leading slash.
   Sample: /whippet/n02091134_10242.jpg"
   [p]
   (let [[_ filename s] (u/split-by-slash p)]
-    (mapi-get-pensieve-pic filename s)))
+    (mapi-get-pensieve-file filename s)))
 
 (defn get-pensieve-filenames []
   (->> (mapi-get-pensieve-directories)
