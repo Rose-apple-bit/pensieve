@@ -1,19 +1,24 @@
 * PenSieve - A filesystem abstraction for prompting Large Language Models
 
-The idea with =PenSieve= is that you drag and
-drop files representing thoughts, or similarly
-high-dimensional concepts, which are used to
-prompt an imaginary filesystem.
+PenSieve is a filesystem abstraction for an
+imaginary file system based on prompting a
+large languae mode, using =Pen.el= as the
+prompting server.
 
-However, filesystem units such as files and
-directories may keep metadata, which is used
-to guide the prompting.
+In layman's terms, you drag and drop files
+representing thoughts, or similarly high-
+dimensional entities.
+
+You could, for example, drag memories between
+chatbots, and that would influence each of
+their personalities.
+
+Filesystem units such as files and directories
+may also keep metadata, such as a prompting
+history, which is used to guide the prompting.
 
 What goes in also affects what comes out, and
 may be used to train the model.
-
-A filesystem abstraction for prompting, using
-=Pen.el= as the prompting server.
 
 ** Installation
 Download from http://github.com/semiosis/pensieve.
