@@ -26,6 +26,7 @@ Make this an argument to the prompt functions.
 #+END_SRC
 
 ** Use-cases
+*** Analysis of thoughts
 "I use the Pensieve. One simply siphons the
 excess thoughts from one's mind, pours them
 into the basin, and examines them at one's
