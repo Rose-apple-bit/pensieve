@@ -1,6 +1,6 @@
-* PenSieve - A filesystem abstraction for prompting Large Language Models
+* PenSieve - A file system abstraction for prompting Large Language Models
 
-PenSieve is a filesystem abstraction for an
+PenSieve is a file system abstraction for an
 imaginary file system based on prompting a
 Large Language Models, using =Pen.el= as the
 prompting server.
@@ -26,7 +26,7 @@ Download from http://github.com/semiosis/pensieve.
 Read about it here: https://semiosis.github.io/pensieve/.
 
 ** Usage
-*** Initiate the filesystem like so
+*** Initiate the file system like so
 **** A chatbot's memories
 #+BEGIN_SRC sh -n :sps bash :async :results none
   pensieve "Dumbledore's Adventures"
