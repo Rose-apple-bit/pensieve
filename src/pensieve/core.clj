@@ -4,4 +4,7 @@
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (let [[type dir] args]
+    (cond
+      (= "pensieve" type) (fpensieve/main dir)(fpg/main dir)
+      :else (println "Please use a known system as first arg [pensieve, pg]" ))))
