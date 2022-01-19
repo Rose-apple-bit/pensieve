@@ -35,7 +35,7 @@ Read about it here: https://semiosis.github.io/pensieve/.
 Or:
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
-  java -jar pensieve-0.1.0-standalone.jar "Dumbledore's Memories"
+  java -jar pensieve-0.1.0-standalone.jar "NSA Top-Secret files"
 #+END_SRC
 
 **** The memories of people
