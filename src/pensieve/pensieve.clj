@@ -6,7 +6,11 @@
   (:gen-class))
 
 (defn api-get-pensieve-directories []
-  (-> (client/get "https://dog.ceo/api/breeds/list/all"
+  (comment
+    (-> (client/get "https://dog.ceo/api/breeds/list/all"
+                    {:as :json})
+        :body :message))
+  (-> (sh "https://dog.ceo/api/breeds/list/all"
                   {:as :json})
       :body :message))
 

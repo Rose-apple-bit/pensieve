@@ -23,5 +23,11 @@
     ;; (sh (cmd "mkdir" "-p" dir))
     (sh "mkdir" "-p" dir)
     (cond
+      ;; Make multiple modes. For example:
+      ;; - a computer's filesystem
+      ;; - chatbot memories
+
+      ;; This mode is called 'pensieve'.
+      ;; It's the prototype, and will simply imagine a filesystem.
       (= "pensieve" type) (fpensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve]"))))
