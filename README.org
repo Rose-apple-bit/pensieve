@@ -1,4 +1,4 @@
-* PenSieve - A filesystem interface to Large Language Models
+* PenSieve - A filesystem abstraction for prompting Large Language Models
 
 https://semiosis.github.io/pensieve/
 
