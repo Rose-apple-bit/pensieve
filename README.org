@@ -1,7 +1,5 @@
 * PenSieve - A filesystem abstraction for prompting Large Language Models
 
-https://semiosis.github.io/pensieve/
-
 The idea with =PenSieve= is that you drag and drop files representing thoughts.
 
 What goes in also affects what comes out, and may be used to train the model.
@@ -9,7 +7,7 @@ What goes in also affects what comes out, and may be used to train the model.
 A filesystem abstraction for prompting, using =Pen.el= as the prompting server.
 
 ** Installation
-Download from http://example.com/FIXME.
+Download from https://semiosis.github.io/pensieve/.
 
 ** Usage
 FIXME: explanation
