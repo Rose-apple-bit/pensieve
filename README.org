@@ -30,6 +30,8 @@ Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
 
 ** Usage
 *** Initiate the file system like so
+Just provide the directory path, and the
+directory will be mounted imaginarily.
 
 #+BEGIN_SRC sh -n :sps bash :async :results none
   # A chatbot's memories
@@ -39,7 +41,7 @@ Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
   java -jar pensieve-0.1.0-standalone.jar "/tmp/NSA Top-Secret files/"
 
   # This could be interesting
-  pensieve "$HOME/The memories of trees"
+  pensieve "$HOME/The memories of trees/"
 #+END_SRC
 
 ** License
