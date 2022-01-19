@@ -1,6 +1,6 @@
 * =PenSieve= - A file system abstraction for prompting Large Language Models
 
-PenSieve is essentially an imaginary file
+=PenSieve= is essentially an imaginary file
 system based on prompting Large LMs, using
 =Pen.el= as the prompting server, or more accurately, a file system interface to prompting.
 
@@ -22,7 +22,7 @@ may be used to train the model.
 ** Installation
 Download from http://github.com/semiosis/pensieve.
 
-Run =Pen.el= in the background. It's the server that powers =PenSieve=.
+Run =Pen.el= in the background. It's the prompting server that powers =PenSieve=.
 
 Read about it here: https://semiosis.github.io/pensieve/.
 
