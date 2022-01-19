@@ -18,6 +18,8 @@ I want _emergent behaviour_.
 I should tie a prompt function to each directory?
 Allow to keep individual memory banks.
 
+Make this an argument to the prompt functions.
+
 *** The prompt
 #+BEGIN_SRC text -n :async :results verbatim code
   This is the filesystem for exploring <what>:
