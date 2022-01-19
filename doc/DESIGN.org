@@ -2,23 +2,23 @@
 ** Simple mapping to Pen.el
 I want _emergent behaviour_.
 
-* Prompting
-** Initiate the filesystem like so
-*** A chatbot's memories
+** Prompting
+*** Initiate the filesystem like so
+**** A chatbot's memories
 #+BEGIN_SRC sh -n :sps bash :async :results none
   pensieve "Dumbledore's Memories"
 #+END_SRC
 
-*** The memories of people
+**** The memories of people
 #+BEGIN_SRC sh -n :sps bash :async :results none
   pensieve "People's memories"
 #+END_SRC
 
-** Each directory has a prompt memory
+*** Each directory has a prompt memory
 I should tie a prompt function to each directory?
 Allow to keep individual memory banks.
 
-** The prompt
+*** The prompt
 #+BEGIN_SRC text -n :async :results verbatim code
   This is the filesystem for exploring <what>:
 #+END_SRC
