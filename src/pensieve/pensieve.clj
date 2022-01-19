@@ -16,7 +16,7 @@
 (defn api-get-pensieve-pics [filename]
   (-> (client/get
        ;; "https://dog.ceo/api/breeds/list/all"
-       (str "https://dog.ceo/api/filename/" filename "/images")
+       (str "https://dog.ceo/api/breed/" filename "/images")
        {:as :json})
       :body :message))
 ;; This gets the body and then gets the message from the body
