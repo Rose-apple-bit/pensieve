@@ -1,6 +1,6 @@
 * Design
 ** Simple mapping to Pen.el
-Look for _emergent behaviour_.
+I want _emergent behaviour_.
 
 * Prompting
 ** Initiate the filesystem like so
