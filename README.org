@@ -38,12 +38,13 @@ Or:
 Copyright © 2022 Semiotic LLC
 
 #+BEGIN_SRC text -n :async :results verbatim code
-                     GNU GENERAL PUBLIC LICENSE
-                        Version 3, 29 June 2007
+                      GNU AFFERO GENERAL PUBLIC LICENSE
+                         Version 3, 19 November 2007
   
-  Copyright (C) 2007 Free Software Foundation, Inc. <https://fsf.org/>
-  Everyone is permitted to copy and distribute verbatim copies
-  of this license document, but changing it is not allowed.
+   Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>
+   Everyone is permitted to copy and distribute verbatim copies
+   of this license document, but changing it is not allowed.
+  
   ...
 #+END_SRC
 
