@@ -1,4 +1,4 @@
-(ns pensieve.pensieve
+(ns pensieve.main
   (:require
    [clj-http.client :as client]
    [clojure.repl :refer :all]
