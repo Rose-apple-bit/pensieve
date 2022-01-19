@@ -36,7 +36,7 @@ Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
   pensieve "$HOME/Dumbledore's Adventures/"
 
   # Alternative invocation:
-  java -jar pensieve-0.1.0-standalone.jar "/tmp/NSA Top-Secret files"
+  java -jar pensieve-0.1.0-standalone.jar "/tmp/NSA Top-Secret files/"
 
   # This could be interesting
   pensieve "The memories of trees"
