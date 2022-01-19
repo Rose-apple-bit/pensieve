@@ -19,7 +19,9 @@
   "I don't do a whole lot ... yet."
   [& args]
   (let [[type dir] args]
-    (sh (cmd "mkdir" "-p" dir))
+    ;; Wrapping into a shell command is unneccessary with sh
+    ;; (sh (cmd "mkdir" "-p" dir))
+    (sh "mkdir" "-p" dir)
     (cond
       (= "pensieve" type) (fpensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve]"))))
