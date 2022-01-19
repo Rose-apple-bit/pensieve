@@ -10,7 +10,7 @@
                   {:as :json})
       :body :message))
 
-(def mapi-get-pensieve-breeds (memoize api-get-dog-breeds))
+(def mapi-get-pensieve-breeds (memoize api-get-pensieve-breeds))
 
 ;; Pull some remote values
 (defn api-get-pensieve-pics [breed]
@@ -21,7 +21,7 @@
       :body :message))
 ;; This gets the body and then gets the message from the body
 
-(def mapi-get-pensieve-pics (memoize api-get-dog-pics))
+(def mapi-get-pensieve-pics (memoize api-get-pensieve-pics))
 
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
@@ -39,7 +39,7 @@
 ;;           ;; {:as :stream}
 ;;           {:as :byte-array})))
 
-(def mapi-get-pensieve-pic (memoize api-get-dog-pic))
+(def mapi-get-pensieve-pic (memoize api-get-pensieve-pic))
 
 (defn get-pensieve-pics [breed]
   (mapi-get-pensieve-pics breed))
