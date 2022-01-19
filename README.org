@@ -30,19 +30,15 @@ Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
 
 ** Usage
 *** Initiate the file system like so
-**** A chatbot's memories
+
 #+BEGIN_SRC sh -n :sps bash :async :results none
+  # A chatbot's memories
   pensieve "Dumbledore's Adventures"
-#+END_SRC
 
-Or:
-
-#+BEGIN_SRC sh -n :sps bash :async :results none
+  # Alternative invocation:
   java -jar pensieve-0.1.0-standalone.jar "NSA Top-Secret files"
-#+END_SRC
 
-**** The memories of people
-#+BEGIN_SRC sh -n :sps bash :async :results none
+  # This could be interesting
   pensieve "The memories of trees"
 #+END_SRC
 
