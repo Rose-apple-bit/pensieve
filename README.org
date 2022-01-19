@@ -18,6 +18,12 @@ Read about it here: https://semiosis.github.io/pensieve/.
   pensieve "Dumbledore's Memories"
 #+END_SRC
 
+Or:
+
+#+BEGIN_SRC sh -n :sps bash :async :results none
+  java -jar pensieve-0.1.0-standalone.jar "Dumbledore's Memories"
+#+END_SRC
+
 **** The memories of people
 #+BEGIN_SRC sh -n :sps bash :async :results none
   pensieve "The memories of trees"
@@ -27,12 +33,6 @@ Read about it here: https://semiosis.github.io/pensieve/.
 #+BEGIN_EXAMPLE
     $ java -jar pensieve-0.1.0-standalone.jar [args]
 #+END_EXAMPLE
-
-** Options
-FIXME: listing of options this app accepts.
-
-** Examples
-...
 
 ** License
 Copyright © 2022 FIXME
