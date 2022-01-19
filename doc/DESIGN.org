@@ -7,8 +7,10 @@
 
 *** The memories of people
 #+BEGIN_SRC sh -n :sps bash :async :results none
-  pensieve "people's memories"
+  pensieve "People's memories"
 #+END_SRC
+
+** Each directory has a memory
 
 ** The prompt
 #+BEGIN_SRC text -n :async :results verbatim code
