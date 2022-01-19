@@ -56,7 +56,7 @@
 
 (defn read-fuse-file [{:keys [path buf size offset fi]}]
   (let [
-        bytes (pensieve/get-pensieve-pic path)
+        bytes (pensieve/get-pensieve-file path)
         length (count bytes)
         bytes-to-read (min (- length offset) size)
         contents (ByteBuffer/wrap bytes)
