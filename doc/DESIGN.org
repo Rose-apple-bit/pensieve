@@ -11,7 +11,7 @@ I want _emergent behaviour_.
 
 **** The memories of people
 #+BEGIN_SRC sh -n :sps bash :async :results none
-  pensieve "People's memories"
+  pensieve "The memories of trees"
 #+END_SRC
 
 *** Each directory has a prompt memory
