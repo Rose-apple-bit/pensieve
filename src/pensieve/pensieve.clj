@@ -79,21 +79,21 @@
   (doall
    (into [] (map get-filename-only (get-few-pensieve-pics filename)))))
 
-(def http-cache (atom {}))
+(def listing-cache (atom {}))
 
-(defn set-http-cache! [filename]
-  (swap! http-cache conj {(keyword filename) (get-pics-clean filename)}))
+(defn set-listing-cache! [filename]
+  (swap! listing-cache conj {(keyword filename) (get-pics-clean filename)}))
 
 (defn get-pensieve-list! [filename]
   (let [kw (keyword filename)]
-    (if (kw @http-cache)
-      (kw @http-cache)
-      (kw (set-http-cache! filename)))))
+    (if (kw @listing-cache)
+      (kw @listing-cache)
+      (kw (set-listing-cache! filename)))))
 
 (defn file-exists?
   "Check against the path string, S always has a leading slash.
   Sample: /whippet/n02091134_10918.jpg"
   [p]
   (let [[_ filename s] (u/split-by-slash p)]
-    (let [files ((keyword filename) @http-cache)]
+    (let [files ((keyword filename) @listing-cache)]
       (u/member s files))))
