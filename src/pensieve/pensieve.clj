@@ -62,12 +62,12 @@
 (defn set-breeds-atom! []
   (reset! breeds-atom (get-pensieve-breeds)))
 
-(defn get-breeds []
+(defn get-files []
   (if @breeds-atom @breeds-atom
       (set-breeds-atom!)))
 
 (defn breed-exists? [path]
-  (u/member (subs path 1) (get-breeds)))
+  (u/member (subs path 1) (get-files)))
 
 (defn get-few-pensieve-pics [breed]
   (into [] (take 10 (get-pensieve-pics breed))))

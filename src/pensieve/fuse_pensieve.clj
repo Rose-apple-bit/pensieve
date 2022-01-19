@@ -38,7 +38,7 @@
 
 (defn readdir-list-files [{:keys [path buf filt offset fi] :as m}]
   (cond
-    (= "/" path) (readdir-list-files-base m (pensieve/get-breeds) [])
+    (= "/" path) (readdir-list-files-base m (pensieve/get-files) [])
     ;; Pop off leading slash and show the list of breeds.
     :else (readdir-list-files-base m [] (pensieve/get-pensieve-list! (subs path 1)))
     ))
@@ -58,7 +58,7 @@
     bytes-to-read))
 
 (defn set-stub-dirs []
-  (->> (conj (map #(str "/" %) (pensieve/get-breeds)) "/")
+  (->> (conj (map #(str "/" %) (pensieve/get-files)) "/")
        (into [])))
 
 (def stub-dirs (set-stub-dirs))
