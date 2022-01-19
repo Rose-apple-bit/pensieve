@@ -13,7 +13,7 @@
 (def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
 
 ;; Pull some remote values
-(defn api-get-pensieve-filenames [filename]
+(defn api-get-pensieve-pics [filename]
   (-> (client/get
        ;; "https://dog.ceo/api/breeds/list/all"
        (str "https://dog.ceo/api/breed/" filename "/images")
@@ -21,7 +21,7 @@
       :body :message))
 ;; This gets the body and then gets the message from the body
 
-(def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
+(def mapi-get-pensieve-filenames (memoize api-get-pensieve-pics))
 
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
@@ -41,7 +41,7 @@
 
 (def mapi-get-pensieve-pic (memoize api-get-pensieve-pic))
 
-(defn get-pensieve-filenames [filename]
+(defn get-pensieve-directories [filename]
   (mapi-get-pensieve-filenames filename))
 
 (defn get-pensieve-pic
@@ -51,7 +51,7 @@
   (let [[_ filename s] (u/split-by-slash p)]
     (mapi-get-pensieve-pic filename s)))
 
-(defn get-pensieve-filenames []
+(defn get-pensieve-directories []
   (->> (mapi-get-pensieve-filenames)
        keys
        (map #(subs (str %) 1))
@@ -60,7 +60,7 @@
 (def filenames-atom (atom nil))
 
 (defn set-filenames-atom! []
-  (reset! filenames-atom (get-pensieve-filenames)))
+  (reset! filenames-atom (get-pensieve-directories)))
 
 (defn get-files []
   (if @filenames-atom @filenames-atom
@@ -70,7 +70,7 @@
   (u/member (subs path 1) (get-files)))
 
 (defn get-few-pensieve-filenames [filename]
-  (into [] (take 10 (get-pensieve-filenames filename))))
+  (into [] (take 10 (get-pensieve-directories filename))))
 
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
