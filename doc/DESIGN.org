@@ -11,6 +11,8 @@
 #+END_SRC
 
 ** Each directory has a prompt memory
+I should tie a prompt function to each directory?
+Allow to keep individual memory banks.
 
 ** The prompt
 #+BEGIN_SRC text -n :async :results verbatim code
