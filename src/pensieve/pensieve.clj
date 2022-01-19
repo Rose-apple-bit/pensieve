@@ -90,7 +90,7 @@
       (kw @http-cache)
       (kw (set-http-cache! filename)))))
 
-(defn pensieve-exists?
+(defn file-exists?
   "Check against the path string, S always has a leading slash.
   Sample: /whippet/n02091134_10918.jpg"
   [p]

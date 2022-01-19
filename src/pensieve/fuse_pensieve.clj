@@ -80,7 +80,7 @@
       [path stat]                       ; string , jni
       (cond
         (u/member path stub-dirs) (getattr-directory (u/lexical-ctx-map))
-        (pensieve/pensieve-exists? path) (getattr-file (u/lexical-ctx-map))
+        (pensieve/file-exists? path) (getattr-file (u/lexical-ctx-map))
         :else (enoent-error)))
     (readdir
       [path buf filt offset fi]
@@ -93,7 +93,7 @@
       [path fi]
       ;; Here we handle errors on opening
       (prn "In open: " path fi)
-      (if (and (u/member path stub-dirs) (not (pensieve/pensieve-exists? path)))
+      (if (and (u/member path stub-dirs) (not (pensieve/file-exists? path)))
         (enoent-error)
         0))
     (read
@@ -101,7 +101,7 @@
       ;; Here we read the contents
       (prn "In read" path)
       (if
-          (not (pensieve/pensieve-exists? path))
+          (not (pensieve/file-exists? path))
           (enoent-error)
           (read-fuse-file (u/lexical-ctx-map))))))
 
