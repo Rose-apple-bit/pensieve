@@ -1,7 +1,7 @@
 (ns pensieve.core
   (:require
    [clojure.repl :refer :all]
-   [pensieve.fuse-pensieve :as pensieve])
+   [pensieve.fuse-pensieve :as fpensieve])
   (:gen-class))
 
 (defn -main
