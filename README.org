@@ -29,7 +29,7 @@ Read about it here: https://semiosis.github.io/pensieve/.
 *** Initiate the filesystem like so
 **** A chatbot's memories
 #+BEGIN_SRC sh -n :sps bash :async :results none
-  pensieve "Dumbledore's Memories"
+  pensieve "Dumbledore's Adventures"
 #+END_SRC
 
 Or:
