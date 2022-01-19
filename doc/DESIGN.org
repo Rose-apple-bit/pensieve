@@ -38,3 +38,7 @@ into the basin, and examines them at one's
 leisure. It becomes easier to spot patterns
 and links, you understand, when they are in
 this form."
+
+*** Generating programming projects
+
+*** 
