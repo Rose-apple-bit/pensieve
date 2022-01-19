@@ -1,4 +1,4 @@
-* PenSieve - A file system abstraction for prompting Large Language Models
+* =PenSieve= - A file system abstraction for prompting Large Language Models
 
 PenSieve is essentially an imaginary file
 system based on prompting Large LMs, using
@@ -21,6 +21,8 @@ may be used to train the model.
 
 ** Installation
 Download from http://github.com/semiosis/pensieve.
+
+Run =Pen.el= in the background. It's the server that powers =PenSieve=.
 
 Read about it here: https://semiosis.github.io/pensieve/.
 
