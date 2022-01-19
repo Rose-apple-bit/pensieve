@@ -51,6 +51,6 @@ Copyright © 2022 Semiotic LLC
 
 AGPLv3 or later.
 
-Project derived from =ruse=, which is also =GPL3.
+Project originally derived from =ruse=, which is also =GPL3.
 
 https://github.com/ahungry/ruse/blob/master/README.md
