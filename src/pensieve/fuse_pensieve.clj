@@ -9,6 +9,8 @@
    (ru.serce.jnrfuse.struct FileStat))
   (:gen-class))
 
+(use '[clojure.java.shell :only [sh]])
+
 (defn cmd
   ""
   [& args]
