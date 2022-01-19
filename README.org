@@ -48,3 +48,5 @@ Copyright © 2022 Semiotic LLC
 #+END_SRC
 
 [[./LICENSE]]
+
+AGPLv3 or later.
