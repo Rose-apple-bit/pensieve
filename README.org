@@ -5,7 +5,12 @@ drop files representing thoughts, or similarly
 high-dimensional concepts, which are used to
 prompt an imaginary filesystem.
 
-What goes in also affects what comes out, and may be used to train the model.
+However, filesystem units such as files and
+directories may keep metadata, which is used
+to guide the prompting.
+
+What goes in also affects what comes out, and
+may be used to train the model.
 
 A filesystem abstraction for prompting, using =Pen.el= as the prompting server.
 
