@@ -4,10 +4,23 @@
    [pensieve.fuse-pensieve :as fpensieve])
   (:gen-class))
 
+(use '[clojure.java.shell :only [sh]])
+
+(defn cmd
+  ""
+  [& args]
+  ;; map a vector with a shell command
+  (clojure.string/join
+   " "
+   (map (fn [s] (->
+                 (sh "q" :in s)
+                 :out)) args)))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
   (let [[type dir] args]
+    (sh (cmd "mkdir" "-p" dir))
     (cond
       (= "pensieve" type) (fpensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve]"))))
