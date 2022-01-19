@@ -40,5 +40,3 @@ and links, you understand, when they are in
 this form."
 
 *** Generating programming projects
-
-*** 
