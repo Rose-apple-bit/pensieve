@@ -6,5 +6,5 @@
   [& args]
   (let [[type dir] args]
     (cond
-      (= "pensieve" type) (pensieve/main dir)(fpg/main dir)
+      (= "pensieve" type) (pensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve, pg]" ))))
