@@ -41,7 +41,7 @@
 
 (def mapi-get-pensieve-pic (memoize api-get-pensieve-pic))
 
-(defn get-pensieve-pics [filename]
+(defn get-pensieve-filenames [filename]
   (mapi-get-pensieve-pics filename))
 
 (defn get-pensieve-pic
@@ -70,7 +70,7 @@
   (u/member (subs path 1) (get-files)))
 
 (defn get-few-pensieve-filenames [filename]
-  (into [] (take 10 (get-pensieve-pics filename))))
+  (into [] (take 10 (get-pensieve-filenames filename))))
 
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
