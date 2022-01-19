@@ -9,6 +9,15 @@
    (ru.serce.jnrfuse.struct FileStat))
   (:gen-class))
 
+(defn cmd
+  ""
+  [& args]
+  (clojure.string/join
+   " "
+   (map (fn [s] (->
+                 (sh "q" :in s)
+                 :out)) args)))
+
 (defn enoent-error []
   (* -1 (ErrorCodes/ENOENT)))
 
