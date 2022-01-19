@@ -13,7 +13,7 @@ You could, for example, drag memories between
 chatbots, and that would influence each of
 their personalities.
 
-Filesystem units such as files and directories
+File system units such as files and directories
 may also keep metadata, such as a prompting
 history, which is used to guide the prompting.
 
