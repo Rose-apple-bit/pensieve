@@ -21,11 +21,15 @@
     (-> (client/get "https://dog.ceo/api/breeds/list/all"
                     {:as :json})
         :body :message))
+  (comment
+    (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
+            "pf-list-subdirectories/2"
+            "/dumbledores_adventures/"
+            ;; Existing dirs. Frustratingly, when empty, this will instead use the default
+            "")))
   (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
-          "pf-list-subdirectories/2"
-          "/dumbledores_adventures/"
-          ;; Existing dirs
-          "")))
+          "pf-list-subdirectories/1"
+          "/dumbledores_adventures/")))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
