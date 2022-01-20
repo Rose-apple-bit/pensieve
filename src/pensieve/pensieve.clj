@@ -88,10 +88,12 @@
     (mapi-get-pensieve-file filename s)))
 
 (defn get-pensieve-filenames []
-  (->> (mapi-get-pensieve-directories)
-       keys
-       (map #(subs (str %) 1))
-       (into [])))
+  (mapi-get-pensieve-directories)
+  ;; (->> (mapi-get-pensieve-directories)
+  ;;      keys
+  ;;      (map #(subs (str %) 1))
+  ;;      (into []))
+  )
 
 (def filenames-atom (atom nil))
 

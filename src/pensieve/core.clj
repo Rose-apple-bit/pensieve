@@ -22,6 +22,7 @@
     ;; Wrapping into a shell command is unneccessary with sh
     ;; (sh (cmd "mkdir" "-p" dir))
     (sh "mkdir" "-p" dir)
+    ;; (sh "sh" "-c" (str (cmd "cmd" "mkdir" "-p" dir) " | pen-tv"))
     (cond
       ;; Make multiple modes. For example:
       ;; - a computer's filesystem
