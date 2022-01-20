@@ -32,7 +32,8 @@
   (json/decode
    (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
            "pf-list-subdirectories/1"
-           "/dumbledores_adventures/"))))
+           "/dumbledores_adventures/")
+       :out)))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
