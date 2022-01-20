@@ -35,11 +35,18 @@
 
 ;; Pull some remote values
 (defn api-get-pensieve-filenames [filename]
-  (-> (client/get
-       ;; "https://dog.ceo/api/breeds/list/all"
-       (str "https://dog.ceo/api/breed/" filename "/images")
-       {:as :json})
-      :body :message))
+  (comment
+    (-> (client/get
+         ;; "https://dog.ceo/api/breeds/list/all"
+         (str "https://dog.ceo/api/breed/" filename "/images")
+         {:as :json})
+        :body :message))
+  (map
+   (fn [s] (str s ".txt"))
+   (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
+           "pf-list-subdirectories/1"
+           (str "/dumbledores_adventures/" filename "/"))
+       :out)))
 ;; This gets the body and then gets the message from the body
 
 (def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
