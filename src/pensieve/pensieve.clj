@@ -128,18 +128,24 @@
   (sh "pen-tv" :in s)
   s)
 
+(defn tvipe [s]
+  (sh "pen-tvipe" :in s)
+  s)
+
 (defn get-file-list-clean [directory]
   (comment
     (doall
      (into [] (map get-filename-only (get-few-pensieve-filenames directory)))))
-  ;; (get-few-pensieve-filenames (tv directory))
-  (get-few-pensieve-filenames directory))
+  (get-few-pensieve-filenames directory)
+  ;; (get-few-pensieve-filenames directory)
+  )
 
 (def file-listing-cache (atom {}))
 
 (defn set-file-listing-cache! [directory]
   (swap! file-listing-cache conj {(keyword directory) (get-file-list-clean directory)}))
 
+;; This is just a memoized file list function
 (defn get-file-list! [directory]
   (let [kw (keyword directory)]
     (if (kw @file-listing-cache)
