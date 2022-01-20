@@ -22,12 +22,12 @@
                     {:as :json})
         :body :message))
   (comment
-    (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
+    (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
             "pf-list-subdirectories/2"
             "/dumbledores_adventures/"
             ;; Existing dirs. Frustratingly, when empty, this will instead use the default
             "")))
-  (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
+  (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
           "pf-list-subdirectories/1"
           "/dumbledores_adventures/")))
 
