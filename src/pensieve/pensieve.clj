@@ -112,7 +112,7 @@
   (reset! directories-atom (get-pensieve-directories)))
 
 (defn get-directories []
-  (if @filenames-atom @directories-atom
+  (if @directories-atom @directories-atom
       (set-directories-atom!)))
 
 (defn directory-exists? [path]
