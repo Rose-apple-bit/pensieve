@@ -7,16 +7,25 @@
 
 (use '[clojure.java.shell :only [sh]])
 
+(defn cmd
+  ""
+  [& args]
+  (clojure.string/join
+   " "
+   (map (fn [s] (->
+                 (sh "q" :in s)
+                 :out)) args)))
+
 (defn api-get-pensieve-directories []
   (comment
     (-> (client/get "https://dog.ceo/api/breeds/list/all"
                     {:as :json})
         :body :message))
-  (-> (sh "penf" "-j"
-          "pf-list-subdirectories/3"
-          "/dumbledores_adventures/"
-          ""
-          "")))
+  (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
+           "pf-list-subdirectories/3"
+           "/dumbledores_adventures/"
+           ""
+           "")))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
