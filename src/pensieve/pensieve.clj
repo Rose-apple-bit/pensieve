@@ -119,7 +119,7 @@
   (u/member (subs path 1) (get-directories)))
 
 (defn get-few-pensieve-filenames [directory]
-  (into [] (take 10 (get-pensieve-directories directory))))
+  (into [] (take 10 (get-pensieve-filenames directory))))
 
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
