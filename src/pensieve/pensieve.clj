@@ -2,7 +2,8 @@
   (:require
    [clj-http.client :as client]
    [clojure.repl :refer :all]
-   [pensieve.util :as u])
+   [pensieve.util :as u]
+   [clojure.data.json :as json])
   (:gen-class))
 
 (use '[clojure.java.shell :only [sh]])
