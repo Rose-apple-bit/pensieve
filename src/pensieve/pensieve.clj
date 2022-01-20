@@ -4,7 +4,7 @@
    [clojure.repl :refer :all]
    [pensieve.util :as u]
    ;; [clojure.data.json :as json]
-   [cheshire.core :as c])
+   [cheshire.core :as json])
   (:gen-class))
 
 (use '[clojure.java.shell :only [sh]])
@@ -29,9 +29,10 @@
             "/dumbledores_adventures/"
             ;; Existing dirs. Frustratingly, when empty, this will instead use the default
             "")))
-  (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
-          "pf-list-subdirectories/1"
-          "/dumbledores_adventures/")))
+  (json/decode
+   (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
+           "pf-list-subdirectories/1"
+           "/dumbledores_adventures/"))))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
@@ -45,10 +46,11 @@
         :body :message))
   (map
    (fn [s] (str s ".txt"))
-   (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
-           "pf-list-subdirectories/1"
-           (str "/dumbledores_adventures/" filename "/"))
-       :out)))
+   (json/decode
+    (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
+            "pf-list-subdirectories/1"
+            (str "/dumbledores_adventures/" filename "/"))
+        :out))))
 ;; This gets the body and then gets the message from the body
 
 (def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
