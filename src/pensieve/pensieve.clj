@@ -132,7 +132,8 @@
   (comment
     (doall
      (into [] (map get-filename-only (get-few-pensieve-filenames directory)))))
-  (get-few-pensieve-filenames (tv directory)))
+  ;; (get-few-pensieve-filenames (tv directory))
+  (get-few-pensieve-filenames directory))
 
 (def file-listing-cache (atom {}))
 
