@@ -22,10 +22,10 @@
                     {:as :json})
         :body :message))
   (-> (sh "unbuffer" "penf" "-u" "-nto" "-j"
-           "pf-list-subdirectories/3"
-           "/dumbledores_adventures/"
-           ""
-           "")))
+          "pf-list-subdirectories/2"
+          "/dumbledores_adventures/"
+          ;; Existing dirs
+          "")))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
