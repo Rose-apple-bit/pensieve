@@ -67,7 +67,18 @@
        (str "https://images.dog.ceo/breeds/" filename "/" s)
        ;; {:as :stream}
        {:as :byte-array})
-      :body))
+      :body)
+  (penf
+   "pf-generate-the-contents-of-a-new-file/6"
+   ""
+   filename
+   "/dumbledores_adventures/"
+   ;; ls (other files)
+   ""
+   ;; ls **/* (more files)
+   ""
+   ;; ls dirs here
+   ""))
 ;; So it might as well be written like this:
 ;; (defn api-get-pensieve-file [filename s]
 ;;   (:body (client/get
