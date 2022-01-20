@@ -5,14 +5,18 @@
    [pensieve.util :as u])
   (:gen-class))
 
+(use '[clojure.java.shell :only [sh]])
+
 (defn api-get-pensieve-directories []
   (comment
     (-> (client/get "https://dog.ceo/api/breeds/list/all"
                     {:as :json})
         :body :message))
-  (-> (sh "https://dog.ceo/api/breeds/list/all"
-                  {:as :json})
-      :body :message))
+  (-> (sh "penf" "-j"
+          "pf-list-subdirectories/3"
+          "/dumbledores_adventures/"
+          ""
+          "")))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
