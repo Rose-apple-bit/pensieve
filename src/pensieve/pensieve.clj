@@ -143,7 +143,9 @@
 (def file-listing-cache (atom {}))
 
 (defn set-file-listing-cache! [directory]
-  (swap! file-listing-cache conj {(keyword directory) (get-file-list-clean directory)}))
+  (swap! file-listing-cache conj {(keyword directory) (get-file-list-clean directory)})
+  ;; (swap! file-listing-cache conj (get-file-list-clean directory))
+  )
 
 ;; This is just a memoized file list function
 (defn get-file-list! [directory]
