@@ -52,10 +52,9 @@
   (map
    (fn [s] (str s ".txt"))
    (json/decode
-    (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
-            "pf-list-subdirectories/1"
-            (str "/dumbledores_adventures/" filename "/"))
-        :out))))
+    (penf
+     "pf-list-subdirectories/1"
+     (str "/dumbledores_adventures/" filename "/")))))
 ;; This gets the body and then gets the message from the body
 
 (def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
