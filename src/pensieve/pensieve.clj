@@ -135,7 +135,7 @@
 (defn set-file-listing-cache! [directory]
   (swap! file-listing-cache conj {(keyword directory) (get-file-list-clean directory)}))
 
-(defn get-pensieve-list! [directory]
+(defn get-file-list! [directory]
   (let [kw (keyword directory)]
     (if (kw @file-listing-cache)
       (kw @file-listing-cache)
