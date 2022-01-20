@@ -124,11 +124,15 @@
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
 
+(defn tv [s]
+  (sh "pen-tv" :in s)
+  s)
+
 (defn get-file-list-clean [directory]
   (comment
     (doall
      (into [] (map get-filename-only (get-few-pensieve-filenames directory)))))
-  (get-few-pensieve-filenames directory))
+  (get-few-pensieve-filenames (tv directory)))
 
 (def file-listing-cache (atom {}))
 
