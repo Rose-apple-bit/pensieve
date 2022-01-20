@@ -18,22 +18,26 @@
                  (sh "q" :in s)
                  :out)) args)))
 
+(defn penf [& args]
+  ;; This is how to run a macro at runtime
+  (eval
+   `(-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
+            ~@args)
+        :out)))
+
 (defn api-get-pensieve-directories []
   (comment
     (-> (client/get "https://dog.ceo/api/breeds/list/all"
                     {:as :json})
         :body :message))
   (comment
-    (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
-            "pf-list-subdirectories/2"
+    (penf "pf-list-subdirectories/2"
             "/dumbledores_adventures/"
             ;; Existing dirs. Frustratingly, when empty, this will instead use the default
-            "")))
+            ""))
   (json/decode
-   (-> (sh "unbuffer" "penf" "-u" "-nto" "--pool" "-j"
-           "pf-list-subdirectories/1"
-           "/dumbledores_adventures/")
-       :out)))
+   (penf "pf-list-subdirectories/1"
+         "/dumbledores_adventures/")))
 
 (def mapi-get-pensieve-directories (memoize api-get-pensieve-directories))
 
