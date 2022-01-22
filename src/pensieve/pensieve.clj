@@ -26,15 +26,16 @@
         :out)))
 
 (defn api-get-pensieve-directories []
+  ;; In theory I could prompt over https
   (comment
     (-> (client/get "https://dog.ceo/api/breeds/list/all"
                     {:as :json})
         :body :message))
   (comment
     (penf "pf-list-subdirectories/2"
-            "/dumbledores_adventures/"
-            ;; Existing dirs. Frustratingly, when empty, this will instead use the default
-            ""))
+          "/dumbledores_adventures/"
+          ;; Existing dirs. Frustratingly, when empty, this will instead use the default
+          ""))
   (json/decode
    (penf "pf-list-subdirectories/1"
          "/dumbledores_adventures/")))
