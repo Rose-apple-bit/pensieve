@@ -12,7 +12,7 @@
   (clojure.string/join
    " "
    (map (fn [s] (->
-                 (sh "q" :in s)
+                 (sh "q" :in (str s))
                  :out)) args)))
 
 (defn -main
