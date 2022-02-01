@@ -37,6 +37,8 @@
     (sh "mkdir" "-p" dir)
     ;; (sh "sh" "-c" (str (cmd "cmd" "mkdir" "-p" dir) " | pen-tv"))
     (cond
+      ;; Make it so when a path that doesn't exist is read, it is created
+
       ;; Make multiple modes. For example:
       ;; - a computer's filesystem
       ;; - chatbot memories
