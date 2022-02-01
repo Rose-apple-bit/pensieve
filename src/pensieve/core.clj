@@ -17,7 +17,9 @@
 
 (defn expand-home [s]
   (if (.startsWith s "~")
-    (clojure.string/replace-first s "~" (System/getProperty "user.home"))
+    (as-> s binding
+        (clojure.string/replace-first binding "~" (System/getProperty "user.home"))
+        (clojure.string/replace-first binding "$HOME" (System/getProperty "user.home")))
     s))
 
 (defn pensieve-test []
