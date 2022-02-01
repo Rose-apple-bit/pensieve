@@ -2,7 +2,11 @@
   (:require
    [clojure.repl :refer :all]
    ;; [pensieve.rc :as rc]
-   [pensieve.fuse-pensieve :as fpensieve])
+   [pensieve.fuse-pensieve :as fpensieve]
+   [clojure.core.async
+              :as a
+              :refer [>! <! >!! <!! go chan buffer close! thread
+                      alts! alts!! take! put! timeout]])
   (:gen-class))
 
 (use '[clojure.java.shell :only [sh]])
