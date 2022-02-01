@@ -15,6 +15,7 @@
   (clojure.string/join
    " "
    (map (fn [s] (->
+                 ;; using pen-q-jq here would enable unicode, but be slower
                  (sh "q" :in (str s))
                  :out)) args)))
 
