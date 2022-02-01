@@ -30,6 +30,15 @@ Download =Pen.el= from http://github.com/semiosis/pen.el.
 
 Read about =PenSieve= here: https://semiosis.github.io/pensieve/.
 
+* Debugging
+- Open =core.clj=
+- Then jack-in
+- Then run the following
+
+#+BEGIN_SRC emacs-lisp -n :async :results verbatim code
+  (-main "pensieve" (expand-home "$HOME/pensieve"))
+#+END_SRC
+
 ** Usage
 *** Initiate the file system like so
 Just provide the directory path, and the

@@ -72,6 +72,7 @@
   (->> (conj (map #(str "/" %) (pensieve/get-directories)) "/")
        (into [])))
 
+;; This is a list of full paths to directories
 (def stub-dirs (set-stub-dirs))
 
 (defn fuse-custom-mount []
@@ -79,7 +80,9 @@
     (getattr
       [path stat]                       ; string , jni
       (cond
+        ;; If it is a directory, then show directory attribute
         (u/member path stub-dirs) (getattr-directory (u/lexical-ctx-map))
+        ;; If it is a file then show directory attribute
         (pensieve/file-exists? path) (getattr-file (u/lexical-ctx-map))
         :else (enoent-error)))
     (readdir
@@ -105,11 +108,14 @@
           (enoent-error)
           (read-fuse-file (u/lexical-ctx-map))))))
 
+(def root-dir (atom nil))
+
 (def stub-atom (atom nil))
 
 (defn mount-it! [dir]
   (let [stub (fuse-custom-mount)]
     (future
+      (reset! root-dir dir)
       (reset! stub-atom stub)
       ;; params: path blocking debug options
       (-> stub (.mount (u/string-to-path dir) true true (into-array String []))))))

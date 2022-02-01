@@ -1,8 +1,7 @@
 (ns pensieve.rc
   (:require
    [clojure.repl :refer :all])
-  (:gen-class)
-  )
+  (:gen-class))
 
 (defn get-xdg-config-home []
   (or (System/getenv "XDG_CONFIG_HOME")

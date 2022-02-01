@@ -143,6 +143,7 @@
   ;; (get-few-pensieve-filenames directory)
   )
 
+;; This is a map of full directories paths to lists of files
 (def file-listing-cache (atom {}))
 
 (defn set-file-listing-cache! [directory]
