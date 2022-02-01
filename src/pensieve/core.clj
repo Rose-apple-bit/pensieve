@@ -41,6 +41,8 @@
       ;; - a computer's filesystem
       ;; - chatbot memories
 
+      ;; - loom mode
+
       ;; This mode is called 'pensieve'.
       ;; It's the prototype, and will simply imagine a filesystem.
       (= "pensieve" type) (fpensieve/main dir)
