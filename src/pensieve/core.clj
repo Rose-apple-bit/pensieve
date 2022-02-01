@@ -15,6 +15,14 @@
                  (sh "q" :in (str s))
                  :out)) args)))
 
+(defn expand-home [s]
+  (if (.startsWith s "~")
+    (clojure.string/replace-first s "~" (System/getProperty "user.home"))
+    s))
+
+(defn pensieve-test []
+  (-main "pensieve" (expand-home "$HOME/pensieve")))
+
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]

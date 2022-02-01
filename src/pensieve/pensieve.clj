@@ -19,6 +19,14 @@
                  (sh "q" :in (str s))
                  :out)) args)))
 
+(defn tv [s]
+  (sh "pen-tv" :in s)
+  s)
+
+(defn tvipe [s]
+  (sh "pen-tvipe" :in s)
+  s)
+
 (defn penf [& args]
   ;; This is how to run a macro at runtime
   (eval
@@ -61,19 +69,20 @@
 
 (def mapi-get-pensieve-filenames (memoize api-get-pensieve-filenames))
 
+
 ;; How does the threading macro work with a :body key as the first form?
 ;; I think it converts :body to (:body).
 ;; So this is syntax sugar, for then extracting the value associated with the key.
 (defn api-get-pensieve-file [directory s]
   (comment (-> (client/get
-       (str "https://images.dog.ceo/breeds/" directory "/" s)
-       ;; {:as :stream}
-       {:as :byte-array})
-      :body))
+                (str "https://images.dog.ceo/breeds/" directory "/" s)
+                ;; {:as :stream}
+                {:as :byte-array})
+               :body))
   (penf
    "pf-generate-the-contents-of-a-new-file/6"
    ""
-   directory
+   (tv directory)
    "/dumbledores_adventures/"
    ;; ls (other files)
    ""
@@ -125,14 +134,6 @@
 
 (defn get-filename-only [s]
   (nth (reverse (u/split-by-slash s)) 0))
-
-(defn tv [s]
-  (sh "pen-tv" :in s)
-  s)
-
-(defn tvipe [s]
-  (sh "pen-tvipe" :in s)
-  s)
 
 (defn get-file-list-clean [directory]
   (comment

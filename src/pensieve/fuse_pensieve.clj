@@ -52,8 +52,7 @@
     ;; (= "/" path) (readdir-list-files-base m (pensieve/get-file-list-clean path) [])
     (= "/" path) (readdir-list-files-base m (pensieve/get-directories) [])
     ;; Pop off leading slash and show the list of filenames.
-    :else (readdir-list-files-base m [] (pensieve/get-file-list! (subs path 1)))
-    ))
+    :else (readdir-list-files-base m [] (pensieve/get-file-list! (subs path 1)))))
 
 (defn read-fuse-file [{:keys [path buf size offset fi]}]
   (let [
