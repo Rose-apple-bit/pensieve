@@ -25,8 +25,11 @@
     (clojure.string/replace-first binding "~" (System/getProperty "user.home"))
     (clojure.string/replace-first binding "$HOME" (System/getProperty "user.home"))))
 
+(def simplechan (chan))
+
 (defn pensieve-test []
-  (-main "pensieve" (expand-home "$HOME/pensieve")))
+  (put! simplechan (-main "pensieve" (expand-home "$HOME/pensieve")) )
+  (take! simplechan println))
 
 (defn -main
   "I don't do a whole lot ... yet."
