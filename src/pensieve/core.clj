@@ -25,8 +25,8 @@
     (clojure.string/replace-first binding "~" (System/getProperty "user.home"))
     (clojure.string/replace-first binding "$HOME" (System/getProperty "user.home"))))
 
-;; (defn pensieve-test []
-;;   (-main "pensieve" (expand-home "$HOME/pensieve")))
+(defn pensieve-test []
+  (-main "pensieve" (expand-home "$HOME/pensieve")))
 
 (defn -main
   "I don't do a whole lot ... yet."
