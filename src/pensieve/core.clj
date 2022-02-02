@@ -52,3 +52,9 @@
 (defn pensieve-test []
   (put! simplechan (-main "pensieve" (expand-home "$HOME/pensieve")) )
   (take! simplechan println))
+
+(defn pensieve-test-list-existing-dirs []
+  @pensieve.pensieve/directories-atom)
+
+(defn pensieve-test-gen-list-files-of-existing-dir []
+  (pensieve.pensieve/get-pensieve-filenames (nth @pensieve.pensieve/directories-atom 2)))
