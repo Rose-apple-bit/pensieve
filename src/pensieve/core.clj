@@ -27,10 +27,6 @@
 
 (def simplechan (chan))
 
-(defn pensieve-test []
-  (put! simplechan (-main "pensieve" (expand-home "$HOME/pensieve")) )
-  (take! simplechan println))
-
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
@@ -52,3 +48,7 @@
       ;; It's the prototype, and will simply imagine a filesystem.
       (= "pensieve" type) (fpensieve/main dir)
       :else (println "Please use a known system as first arg [pensieve]"))))
+
+(defn pensieve-test []
+  (put! simplechan (-main "pensieve" (expand-home "$HOME/pensieve")) )
+  (take! simplechan println))
